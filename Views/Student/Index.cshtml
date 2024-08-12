@@ -1,0 +1,44 @@
+﻿
+<div class="container">
+    <h1 class="text-center my-4 text-dark">Get Your Course Grades</h1>
+
+    <p class="lead text-center text-dark">Please provide your phone number so we can send you your course grades.</p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-header bg-info text-white">Contact Information</div>
+                <div class="card-body">
+                    <h5 class="card-title">We value your privacy</h5>
+                    <p class="card-text">Your phone number will only be used to send you your grades and will not be shared with any third parties.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card bg-light">
+                <div class="card-header bg-warning text-white">Important Information</div>
+                <div class="card-body">
+                    <h5 class="card-title">Stay Updated!</h5>
+                    <p class="card-text">Make sure your phone number is correct. You will receive a confirmation message once your request is processed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-50 mt-3">
+        <form id="phoneNumberForm" method="post" action="/Student/DisplayStudentGrades">
+        <div class="form-group">
+            <label for="phoneNumber" class="form-label">Phone Number:</label>
+            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-custom btn-block mt-3">Submit</button>
+    </form>
+    </div>
+
+
+
+
+
+
+

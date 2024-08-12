@@ -1,0 +1,48 @@
+﻿@model List<Instructor>
+
+
+<a href="/instructor/Add" class="btn btn-warning "> Add New Instructor</a>
+<br />
+<br />
+    <table class="table table-bordered table-hover text-center ">
+        <thead  class="fw-bolder"> 
+            <tr>
+                <td>Instructor</td>
+                <td>Salary</td>
+                <td>Department</td>
+                <td>Address</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+    @foreach(Instructor instructor in Model)
+    {
+        <tr>
+            <td>@instructor.Name</td>
+            <td>@instructor.Salary</td>
+            <td>@instructor.Department.Name</td>
+            <td>@instructor.Address</td>
+            <td> 
+               <a href="/instructor/edit/@instructor.Id" class="btn btn-primary"> Edit</a>
+                <a href="#" class="btn btn-danger Js-delete" data-id="@instructor.Id" > Delete</a>
+            </td>
+        </tr>
+
+    }
+  
+    </table>
+
+
+    <script src="~/js/Handellers.js" asp-append-version="true"></script>
+
+    <script>
+
+    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="#" />
+
+    </script>
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+﻿@model Instructor
+
+    <h2 class="text-center mb-2">New Instructor</h2>
+<form method="post" action="/instructor/SaveNew" class="form-control w-60 col-lg-6">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" required autocomplete="off" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+   </div>
+
+    <div>
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Image"></label>
+        <input asp-for="Image" class="form-control" type="file" autocomplete="off" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+     
+    <label asp-for="Dept_Id"> Department</label>
+    <select  asp-for="Dept_Id" class="form form-control form-select">
+        @foreach (Department dept in ViewBag.departments)
+        {
+                <option value="@dept.Id">@dept.Name</option>
+        }  
+    </select>
+
+    <label asp-for="Course_Id"> Course</label>
+    <select asp-for="Course_Id" class="form form-control form-select">
+        @foreach (Course course in ViewBag.courses)
+        { 
+            <option value="@course.Id"> @course.Name</option>
+        }
+    </select>
+
+    <input  class="btn btn-success mt-4" type="submit" value="Add"  />
+
+</form>
+
+
+
+@section Scripts{
+
+ <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+ <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+}
+
+
+
+
+
+
